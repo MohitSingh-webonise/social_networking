@@ -1,0 +1,14 @@
+<div class="marTop80">
+  <% @friends.each do |p|%>
+      <%= form_tag friends_path ,method: 'post', html: {class: "form-inline"} do  %>
+          <div class="text-left">
+            <% if p.email==current_user.email %>
+            <% else %>
+                <%=p.email %>
+                <%= submit_tag "send"  %>
+            <% end %>
+      <% end %>
+  <% end %>
+
+  </div>
+</div>

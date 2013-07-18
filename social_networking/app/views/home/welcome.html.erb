@@ -1,0 +1,26 @@
+<%= form_for @article, html: {class: "form-horizontal"} do |f| %>
+    <div class="row marTop15">
+      <div class="span1">
+        <div class="form-horizontal marTop60 ">
+          <div class="span2">
+            <div class="text-left">
+              <h4>Hello <span><%= current_user.email %></span></h4>
+            </div>
+          </div>
+          <div  class="controls">
+            <%= f.text_area :description, size: "60x2" %>
+            <%= f.submit "post" %>
+<% end %>
+</div>
+</div>
+
+<div class="span6 text-center"><p class="text-center"><h4>Posts</h4></p>
+  <% @post.each do |p| %>
+      <%=p.description %><br/>
+  <% end %>
+</div>
+<div class="text-left">
+  <%= link_to "search_friend", home_search_friend_path, :method=>:search_friend %>
+</div>
+</div>
+</div>
